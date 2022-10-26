@@ -4,8 +4,8 @@ import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import SignIn from '../SignIn/SignIn';
 
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -24,7 +24,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                console.log('sign in user',user);
                 form.reset();
                 setError('');
                 if(user.emailVerified){
@@ -44,6 +44,7 @@ const Login = () => {
     }
 
     return (
+<div className='d-flex justify-content-between'>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -59,11 +60,18 @@ const Login = () => {
             <Button variant="primary" type="submit">
                 Login
             </Button>
+            
             <Form.Text className="text-danger">
                 {error}
             </Form.Text>
             
         </Form>
+
+        <div>
+
+        <SignIn> </SignIn>
+        </div>
+</div>
         
     );
 };

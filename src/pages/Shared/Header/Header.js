@@ -15,6 +15,8 @@ import Button from 'react-bootstrap/Button';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
 
+   // console.log(user.displayName);
+
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -42,15 +44,15 @@ const Header = () => {
                     <Nav>
                         <>
                             {
-                                user?.uid ?
+                                user?.email ?
                                     <>
-                                        <span>{user?.displayName}</span>
-                                        <Button variant="light" onClick={handleLogOut}>Log out</Button>
+                                        <Button variant="warning">{user?.displayName}</Button>
+                                        <Button variant="primary" onClick={handleLogOut}>Log out</Button>
                                     </>
                                     :
                                     <>
-                                        <Link to='/login'>Login</Link>
-                                        <Link to='/register'>Register</Link>
+                                        <Link to='/login' variant="primary"><Button>Log In</Button></Link>
+                                        <Link to='/register' variant="primary"><Button>Register</Button></Link>
                                     </>
                             }
 
@@ -59,7 +61,7 @@ const Header = () => {
                         <Link to="/profile">
                             {user?.photoURL ?
                                 <Image
-                                    style={{ height: '30px' }}
+                                    style={{ height: '50px' }}
                                     roundedCircle
                                     src={user?.photoURL}>
                                 </Image>
