@@ -44,7 +44,7 @@ const Header = () => {
                     <Nav>
                         <>
                             {
-                                user?.email ?
+                                user?.uid ?
                                     <>
                                         <Button variant="warning">{user?.displayName}</Button>
                                         <Button variant="primary" onClick={handleLogOut}>Log out</Button>
