@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
-import SignIn from '../SignIn/SignIn';
+
 
 const Register = () => {
     const [error, setError] = useState('');
