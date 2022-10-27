@@ -12,12 +12,12 @@ const PremiumCard = ({course}) => {
 
 
     return (
-        <div className="border border-primary">
+        <div className="border border-primary m-5">
             <Pdf targetRef={ref} filename="course-details.pdf">
-                {({ toPdf }) => <button onClick={toPdf} class="btn btn-primary btn-lg float-center" >Download Course </button>}
+                {({ toPdf }) => <button onClick={toPdf} className="btn btn-primary btn-lg float-center" >Download Course </button>}
             </Pdf>
             <div ref={ref} >   
-                <img className='courselogo ' src={course.image_url}  alt="logo"/>
+                <img className=''style={{ width: '10rem', height: '10rem' }} src={course.image_url}  alt="logo"/>
                 <h1 className='text-black text-center'>Course Title :  {course.title}</h1>
 
                 <p className='text-black'>{course.details1}</p>

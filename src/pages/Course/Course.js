@@ -1,7 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
-import PremiumAccess from '../PremiumAccess/PremiumAccess';
+import { useLoaderData } from 'react-router-dom';
 import './Course.css';
 
 
@@ -16,7 +14,8 @@ const Course = () => {
                         <img className='courselogo' src={course.image_url}  alt="logo"/>
                         <h1>Course Title :  {course.title}</h1>
 
-                        <img src={course.thumbnail_url} className="thumbnail" alt="Course"   />
+                        <img style={{ height: "10%",
+                                     width: "50%" }} src={course.thumbnail_url} className="thumbnail" alt="Course"   />
                         
                             
 
@@ -28,7 +27,7 @@ const Course = () => {
 
                      </div>
                     
-                    <Link to='/premiumaccess'><Button> PremiumAccess</Button></Link>
+                    
 
 
 

@@ -1,12 +1,13 @@
 import React from 'react';
-import './Footer.css';
 
 const Footer = () => {
-    return (
-        <div className='footer'>
-            <h5> <small> copyrights preserved by euro programming team@2022</small></h5>
-        </div>
-    );
+  return (
+    <div>
+      <p style={{ color: "blue", 
+                   textAlign: "center", 
+                   marginTop: "50px" }}> Copy right preserved by Euro programming team @2022</p>
+    </div>
+  );
 };
 
 export default Footer;

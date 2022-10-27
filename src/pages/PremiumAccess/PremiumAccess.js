@@ -6,7 +6,7 @@ import PremiumCard from '../PremiumCard/PremiumCard';
 //const ref= React.createRef();
 const PremiumAccess = () => {
     const courses = useLoaderData();
-    console.log('p course', courses)
+    //console.log('p course', courses)
     return (
         
             <div className="">

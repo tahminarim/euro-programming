@@ -3,7 +3,6 @@ import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
@@ -43,18 +42,22 @@ const Header = () => {
             <div className={`${theme}`}>
                 <Navbar collapseOnSelect className='mb-4' expand="lg" >
                     <Container >
-                        <Navbar.Brand > <h1 className='text-warning'><FcMultipleDevices /> Euro<span className='text-primary'> Programming</span></h1> </Navbar.Brand>
+                        <Navbar.Brand > <h1 className='text-warning'><FcMultipleDevices /> Euro<span className='text-primary'> Programming</span> <span className='text-white'>......</span></h1> </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav" >
-                            <Nav className="me-auto">
-                                <Nav.Link href="/courses">Courses</Nav.Link>
-                                <Nav.Link href="blog">Blog</Nav.Link>
-                                <Nav.Link href="faq">FAQ</Nav.Link>
-                                <NavDropdown title="Screen Mode" id="collasible-nav-dropdown">
-                                    <NavDropdown.Item  onClick={toggleTheme}>Dark mode</NavDropdown.Item>
-                                    <NavDropdown.Item  onClick={toggleTheme}> Light mode </NavDropdown.Item>
+                        <Navbar.Collapse id="responsive-navbar-nav"  className='m-3'>
+                            <Nav className="me-auto  ">
+                                <Nav.Link href="/" className='text-primary'>Home</Nav.Link>
                                 
-                                </NavDropdown>
+                                <Nav.Link href="/courses" className='text-primary'>Courses</Nav.Link>
+                                <Nav.Link href="blog" className='text-primary'>Blog</Nav.Link>
+                                <Nav.Link href="faq" className='text-primary'>FAQ</Nav.Link>
+                                
+                                <Nav.Link onClick={toggleTheme} className='text-primary'>Mode Change </Nav.Link>
+                                
+                                
+
+                                
+                                <Link to='/premiumaccess'><Button> PremiumAccess</Button></Link>
                             </Nav>
                             <Nav>
                                 <>
