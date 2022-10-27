@@ -11,6 +11,7 @@ import Login from "../../pages/Login/Login/Login";
 import Register from "../../pages/Login/Register/Register";
 import Profile from "../../pages/Others/Profile/Profile";
 import TermsAndConditions from "../../pages/Others/TermsAndConditions/TermsAndConditions";
+import PremiumAccess from "../../pages/PremiumAccess/PremiumAccess";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
@@ -32,6 +33,11 @@ export const routes = createBrowserRouter([
                 path: '/course/:id',
                 element: <Course></Course>,
                 loader: ({params})=> fetch(`http://localhost:5000/course/${params.id}`)
+            },
+            {
+                path: '/premiumaccess',
+                element: <PrivateRoute> <PremiumAccess></PremiumAccess></PrivateRoute>,
+                loader: ({params})=> fetch(`http://localhost:5000/coursedetails`)
             },
             
             {
