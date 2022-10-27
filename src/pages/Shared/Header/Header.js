@@ -8,8 +8,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import {  FcMultipleDevices } from "react-icons/fc";
 import './Header.css'
-
 import Button from 'react-bootstrap/Button';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -20,6 +21,12 @@ const Header = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+    //totlip
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          {user?.displayName}
+        </Tooltip>
+      );
 
     //theme mode changing 
 
@@ -65,6 +72,9 @@ const Header = () => {
                                         user?.uid ?
                                             <>
                                                 <Button variant="warning">{user?.displayName}</Button>
+
+
+
                                                 <Button variant="primary" onClick={handleLogOut}>Log out</Button>
                                             </>
                                             :
@@ -78,11 +88,19 @@ const Header = () => {
                                 </>
                                 <Link to="/profile">
                                     {user?.photoURL ?
-                                        <Image
-                                            style={{ height: '50px' }}
-                                            roundedCircle
-                                            src={user?.photoURL}>
-                                        </Image>
+                                        
+
+                                        <OverlayTrigger 
+                                        placement="right"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={renderTooltip}>
+                                                <Image
+                                                    style={{ height: '50px' }}
+                                                    roundedCircle
+                                                    src={user?.photoURL}>
+                                                </Image>
+                                        </OverlayTrigger>
+
                                         : <FaUser></FaUser>
                                     }
                                 </Link>

@@ -13,25 +13,33 @@ const Home = () => {
       <Card className='border border-warning '>
         <Card.Img variant="top" src={pic3} />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title> WEB DEVELOPER</Card.Title>
           <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
+          
+              Become a fullstack developer, improve your skills in HTML,CSS, Javascript, PHP… 
           </Card.Text>
         </Card.Body>
         <Card.Footer className='border border-warning bg-warning'>
           <small className="text-muted"></small>
         </Card.Footer>
       </Card>
-   
+
       <Card>
+        <img variant="top" src={pic4} alt="" 
+        style={{ height: "18em" ,
+         width: "20em" , margin: "10px" }} />
+
+      </Card>
+   
+      <Card className='border border-warning '>
         <Card.Img variant="top" src={pic1} />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title> TO BE ABLE TO</Card.Title>
           <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This card has even longer content than the
-            first to show that equal height action.
+         
+Develop the functionalities of a website or a web application (back-end)
+Develop the visual part of a website or a web application (front-end)
+Implement a content management solution (CMS)
           </Card.Text>
         </Card.Body>
         <Card.Footer className='bg-warning'>
